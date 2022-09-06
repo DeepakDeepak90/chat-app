@@ -29,9 +29,9 @@ const methods = {
       methods.socketConnect(data.username, data.userID,usermail);
   
       // set localstorage for session
-      localStorage.setItem('session-username', data.username);
-      localStorage.setItem('session-usermail', data.usermail);
-      localStorage.setItem('session-userID', data.userID);
+      // localStorage.setItem('session-username', data.username);
+      // localStorage.setItem('session-usermail', data.usermail);
+      // localStorage.setItem('session-userID', data.userID);
   
       document.querySelector(".login-container").style.display="none"
       document.querySelector(".chat-body").style.display="block"
@@ -42,20 +42,20 @@ const methods = {
   }
 }
 // session variables
-const sessUsername = localStorage.getItem('session-username');
-const sessUsermail = localStorage.getItem('session-usermail');
-const sessUserID = localStorage.getItem('session-userID');
+// const sessUsername = localStorage.getItem('session-username');
+// const sessUsermail = localStorage.getItem('session-usermail');
+// const sessUserID = localStorage.getItem('session-userID');
 
-if(sessUsername && sessUserID && sessUsermail) {
+// if(sessUsername && sessUserID && sessUsermail) {
 
-  methods.socketConnect(sessUsername, sessUserID,sessUsermail);
+//   methods.socketConnect(sessUsername, sessUserID,sessUsermail);
 
-  document.querySelector(".login-container").style.display="none"
-  document.querySelector(".chat-body").style.display="block"
+//   document.querySelector(".login-container").style.display="none"
+//   document.querySelector(".chat-body").style.display="block"
 
-  // userTitle.innerHTML = sessUsername;
-}
-
+//   // userTitle.innerHTML = sessUsername;
+// }
+    
 // login form handler
 const loginForm = document.querySelector('.user-login');
 loginForm.addEventListener('submit', (e) => {

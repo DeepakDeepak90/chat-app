@@ -1,7 +1,7 @@
 {
   "name": "socket.io-chat-app",
   "version": "1.0.0",
-  "description": "Realtime chat app by Mandeep Singh. Nodejs, Express, MongoDB.",
+  
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -12,7 +12,7 @@
     "realtime-chat-app",
     "mern-chat-app"
   ],
-  "author": "Mandeep Singh",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
