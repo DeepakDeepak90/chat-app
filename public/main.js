@@ -1,12 +1,12 @@
-const socket = io('http://localhost:3000/', {
-  autoConnect: false
-});
+const socket = io();
 
 // Global Variables 
 const userTable = document.querySelector('.users');
 const userTagline = document.querySelector('#users-tagline');
+let sabkanaam;
 const userTitle = document.getElementById('user-title');
 // Global methods
+
 const methods = {
   socketConnect: async (username, userID,usermail) => {
     socket.auth = { username, userID,usermail }
@@ -16,7 +16,7 @@ const methods = {
     const data={
       username,usermail
     }
-
+    
     let options = {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
@@ -25,11 +25,11 @@ const methods = {
     await fetch('/session', options)
     .then( res => res.json() )
     .then( data => {
-  
+      
       methods.socketConnect(data.username, data.userID,usermail);
-  
       // set localstorage for session
       localStorage.setItem('session-username', data.username);
+      
       localStorage.setItem('session-usermail', data.usermail);
       localStorage.setItem('session-userID', data.userID);
   
@@ -110,7 +110,7 @@ textarea.addEventListener('keyup', (e) => {
 // console.log(username);
 function sendMessage(message) {
      let msg = {
-        user: socket.user,
+        user: sabkanaam,
         message: message.trim()
     }
     // Append 
@@ -143,3 +143,8 @@ socket.on('message', (msg) => {
 function scrollToBottom() {
     messageArea.scrollTop = messageArea.scrollHeight
 }
+socket.emit("rec",(userkanaam)=>{
+
+})
+  
+console.log();
