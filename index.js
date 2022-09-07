@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-
+const port=process.env.PORT || 3000;
 // init socket server
 const http = require('http');
 const server = http.createServer(app);
@@ -71,6 +71,6 @@ io.on('connection', async socket => {
   let userkanaam=userData.username;
   io.emit('rec',userkanaam)
 })
-server.listen(3000, () => {
-  console.log(`Server is running on port 3000...`);
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}...`);
 });
